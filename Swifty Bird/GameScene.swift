@@ -15,9 +15,9 @@ class GameScene: SKScene {
     var skyArr = SKSpriteNode[]()
     var pipeUpArr = SKSpriteNode[]()
     var pipeDownArr = SKSpriteNode[]()
+    var started = Bool()
     
     override func didMoveToView(view: SKView) {
-        self.physicsWorld.gravity = CGVectorMake( 0.0, -5.0 )
         self.backgroundColor = SKColor(red: 78/255, green: 192/255, blue: 202/255, alpha: 1)
         
         var ground = SKSpriteNode()
@@ -42,14 +42,23 @@ class GameScene: SKScene {
         player = SKSpriteNode(imageNamed:"bird")
         player.xScale = 2
         player.yScale = 2
-        player.position = CGPoint(x:337.0,y:641.0)
+        player.position = CGPoint(x:337.0,y:441.0)
         player.physicsBody = SKPhysicsBody(circleOfRadius: player.size.height / 2.0)
-        player.physicsBody.dynamic = true
+        player.physicsBody.dynamic = false
         player.physicsBody.allowsRotation = false
         self.addChild(player)
+        
+        started = false
     }
     
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+        if(started == false) {
+            started = true
+            player.physicsBody.dynamic = true
+            self.physicsWorld.gravity = CGVectorMake( 0.0, -7.0 )
+
+        }
+        
         for touch: AnyObject in touches {
             player.physicsBody.velocity = CGVectorMake(0,0)
             player.physicsBody.applyImpulse(CGVectorMake(0, 30))
@@ -57,21 +66,28 @@ class GameScene: SKScene {
     }
    
     override func update(currentTime: CFTimeInterval) {
-        playerRotate()
-        
-        movePipe()
-        moveGround()
-        moveSky()
-        
-        addPipe()
-        addGround()
-        addSky()
-        
-        cleanPipe()
-        cleanGround()
-        cleanSky()
-        
-        playerDie()
+        if(started) {
+            playerRotate()
+            
+            movePipe()
+            moveGround()
+            moveSky()
+            
+            addPipe()
+            addGround()
+            addSky()
+            
+            cleanPipe()
+            cleanGround()
+            cleanSky()
+            
+            playerDie()
+        }
+        else
+        {
+            player.physicsBody.dynamic = false
+            self.physicsWorld.gravity = CGVectorMake( 0.0, 0.0 )
+        }
     }
     
     func playerRotate() {
@@ -89,11 +105,13 @@ class GameScene: SKScene {
             player = SKSpriteNode(imageNamed:"bird")
             player.xScale = 2
             player.yScale = 2
-            player.position = CGPoint(x:337.0,y:641.0)
+            player.position = CGPoint(x:337.0,y:441.0)
             player.physicsBody = SKPhysicsBody(circleOfRadius: player.size.height / 2.0)
             player.physicsBody.dynamic = true
             player.physicsBody.allowsRotation = false
             self.addChild(player)
+            
+            started = false
         }
     }
     
