@@ -72,7 +72,7 @@ class GameScene: SKScene {
         cleanSky()
         
         playerDie()
-}
+    }
     
     func playerRotate() {
         player.zRotation = player.physicsBody.velocity.dy/300
