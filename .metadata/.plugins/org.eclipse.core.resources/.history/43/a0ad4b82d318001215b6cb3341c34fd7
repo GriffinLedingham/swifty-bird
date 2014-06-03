@@ -1,0 +1,102 @@
+package msg.boundary.view;
+
+import java.text.NumberFormat;
+import java.io.*;
+import java.util.Date;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.text.ParseException;
+
+import msg.controller.StallManager;
+
+class BookingView extends CommandLineInterface {
+
+	StallManager stall;
+	
+	BookingView(StallManager stall) {
+		this.stall = stall;
+	}
+	
+	public boolean bookStallProducer()
+	{
+		System.out.println("Input Stall ID: ");
+		int stallID = getNextInt();
+		
+		System.out.println("Input Name: ");
+		String name = getNextString();
+		
+		Date startDate;
+		Date endDate;
+
+		while(true){
+		System.out.println("Input Start Date: ");
+		//int stallID = getNextInt();
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		String userDate = null;
+		try {
+            userDate = br.readLine();
+         } catch (IOException ioe) {
+            System.out.println("IO error trying to read date.");
+            System.exit(1);
+         }
+		String pattern = "yyyy/MM/dd";
+		SimpleDateFormat sdf = new SimpleDateFormat();
+		sdf.setLenient(false);
+		try {
+			sdf.applyPattern(pattern);
+			startDate =sdf.parse(userDate);
+			break;
+			//date = new GregorianCalendar(date).getTime();
+			} catch (ParseException e) {
+			System.out.println("Wrong date format. Please try again.");
+			}
+		}
+		while(true){
+			System.out.println("Input End Date: ");
+			//int stallID = getNextInt();
+			BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+			String userDate;
+			try {
+	            userDate = br.readLine();
+	         } catch (IOException ioe) {
+	            System.out.println("IO error trying to read date.");
+	            System.exit(1);
+	         }
+			String pattern = "yyyy/MM/dd";
+			SimpleDateFormat sdf = new SimpleDateFormat();
+			sdf.setLenient(false);
+			try {
+				sdf.applyPattern(pattern);
+				endDate =sdf.parse(userDate);
+				break;
+				//date = new GregorianCalendar(date).getTime();
+				} catch (ParseException e) {
+				System.out.println("Wrong date format. Please try again.");
+				}
+			}
+		
+		System.out.println("Input Booking ID: ");
+		int bookingID = getNextInt();
+
+		System.out.println("Input Category: ");
+		String category = getNextString();
+		
+		
+		
+		
+		
+		stall.bookStall(stallID, name, startDate, endDate, bookingID, category);
+		return true;
+	}
+	
+	public boolean bookStallMaintenance()
+	{
+		return true;
+	}
+
+	
+	
+	
+	
+}
+

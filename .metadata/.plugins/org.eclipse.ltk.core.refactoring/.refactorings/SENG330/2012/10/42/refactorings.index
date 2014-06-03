@@ -1,0 +1,26 @@
+1350472329261	Rename type 'BankManager'
+1350472935982	Rename type 'AssetDB'
+1350473333981	Rename type 'Asset'
+1350473610016	Rename compilation unit 'MSGApplication.java'
+1350473664055	Delete element
+1350473667913	Delete element
+1350473680970	Rename type 'Mortgage'
+1350474104519	Rename type 'Investment'
+1350474111345	Delete element
+1350474115560	Delete element
+1350497833224	Rename compilation unit 'MoosStreet.java'
+1350519677550	Rename type 'Stall'
+1350520448902	Delete element
+1350525114126	Delete elements
+1350526002828	Delete element
+1350526009037	Delete elements
+1350526181320	Rename compilation unit 'UserDB.java'
+1350527912045	Delete element
+1350527920968	Delete elements
+1350534209372	Rename package 'msg'
+1350534288870	Rename package 'msg.boundary.db'
+1350534317530	Rename package 'msg.boundary.view'
+1350534339179	Rename package 'msg.controller'
+1350534382804	Delete element
+1350534349948	Rename package 'msg.entity'
+1350541123794	Delete element

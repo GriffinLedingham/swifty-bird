@@ -1,0 +1,30 @@
+package msg.boundary.view;
+
+import java.text.NumberFormat;
+
+import msg.controller.StallManager;
+
+class BookingView extends CommandLineInterface {
+
+	StallManager stall;
+	
+	BookingView(StallManager stall) {
+		this.stall = stall;
+	}
+	
+	public boolean bookStallProducer()
+	{
+		return true;
+	}
+	
+	public boolean bookStallMaintenance()
+	{
+		return true;
+	}
+
+	
+	
+	
+	
+}
+

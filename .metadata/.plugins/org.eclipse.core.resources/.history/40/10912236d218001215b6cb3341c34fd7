@@ -1,0 +1,36 @@
+package msg.boundary.view;
+
+import java.text.NumberFormat;
+
+import msg.controller.StallManager;
+
+class BookingView extends CommandLineInterface {
+
+	StallManager stall;
+	
+	BookingView(StallManager stall) {
+		this.stall = stall;
+	}
+	
+	public boolean bookStallProducer()
+	{
+		System.out.println("Input Stall ID: ");
+		int stallID = getNextInt();
+		
+		System.out.println("Input Stall ID: ");
+		String name = getNextString();
+		stall.bookStall(stallID, name, startDate, endDate, bookingID, category)
+		return true;
+	}
+	
+	public boolean bookStallMaintenance()
+	{
+		return true;
+	}
+
+	
+	
+	
+	
+}
+

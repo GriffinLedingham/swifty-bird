@@ -1,0 +1,54 @@
+package msg.boundary.view;
+
+import java.text.NumberFormat;
+import java.io.*;
+
+import msg.controller.StallManager;
+
+class BookingView extends CommandLineInterface {
+
+	StallManager stall;
+	
+	BookingView(StallManager stall) {
+		this.stall = stall;
+	}
+	
+	public boolean bookStallProducer()
+	{
+		System.out.println("Input Stall ID: ");
+		int stallID = getNextInt();
+		
+		System.out.println("Input Name: ");
+		String name = getNextString();
+		
+		System.out.println("Input Start Date: ");
+		//int stallID = getNextInt();
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		Date userDate;
+		try {
+            userDate = br.readLine();
+         } catch (IOException ioe) {
+            System.out.println("IO error trying to read date.");
+            System.exit(1);
+         }
+
+		
+		
+		
+		
+		
+		stall.bookStall(stallID, name, startDate, endDate, bookingID, category)
+		return true;
+	}
+	
+	public boolean bookStallMaintenance()
+	{
+		return true;
+	}
+
+	
+	
+	
+	
+}
+
