@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "D6C4D490193E135C0014D3C4"
-               BuildableName = "Test Game.app"
+               BuildableName = "Swifty Bird.app"
                BlueprintName = "Test Game"
                ReferencedContainer = "container:Swifty Bird.xcodeproj">
             </BuildableReference>
@@ -43,7 +43,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D6C4D490193E135C0014D3C4"
-            BuildableName = "Test Game.app"
+            BuildableName = "Swifty Bird.app"
             BlueprintName = "Test Game"
             ReferencedContainer = "container:Swifty Bird.xcodeproj">
          </BuildableReference>
@@ -62,7 +62,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D6C4D490193E135C0014D3C4"
-            BuildableName = "Test Game.app"
+            BuildableName = "Swifty Bird.app"
             BlueprintName = "Test Game"
             ReferencedContainer = "container:Swifty Bird.xcodeproj">
          </BuildableReference>
@@ -80,7 +80,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D6C4D490193E135C0014D3C4"
-            BuildableName = "Test Game.app"
+            BuildableName = "Swifty Bird.app"
             BlueprintName = "Test Game"
             ReferencedContainer = "container:Swifty Bird.xcodeproj">
          </BuildableReference>
